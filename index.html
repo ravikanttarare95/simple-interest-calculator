@@ -25,13 +25,13 @@
         }
 
         .calculator-container {
-            box-shadow: inset 1px 1px 10px 1px rgb(244, 219, 199), inset -1px -1px 10px 1px rgb(244, 219, 199), 0 3px 5px 0 #666;
+            box-shadow: inset 1px 1px 10px 1px #ccc, inset -1px -1px 10px 1px #ccc, 0 3px 2px 0 #666;
             margin: 100px auto;
             width: 300px;
             text-align: center;
             padding: 20px;
             border-radius: 10px;
-            background-color: rgb(220, 212, 206);
+            background-color: #fff
         }
 
         .input-container {
@@ -44,7 +44,7 @@
         input {
             height: 30px;
             border-radius: 5px;
-            border: 1px solid #ffb1ff;
+            border: 1px solid #5b015b;
             padding: 10px;
             font-size: 15px;
         }
@@ -55,7 +55,7 @@
         }
 
         .btn {
-
+            cursor: pointer;
             color: #ffffff;
             border: none;
             padding: 5px 20px;
@@ -73,7 +73,7 @@
 
         #simple-interest {
             margin-top: 20px;
-            border: 1px solid #ffb1ff;
+            border: 1px solid #5b015b;
             height: 50px;
             border-radius: 5px;
             background-color: #fff;
@@ -92,8 +92,8 @@
         </div>
 
         <div class="btn-contaier">
-            <button type="button" class="btn btn-calculate" onclick="calculate()">Calculate</button>
             <button type="button" class="btn btn-reset" onclick="reset()">Reset</button>
+            <button type="button" class="btn btn-calculate" onclick="calculate()">Calculate</button>
         </div>
 
         <p id="simple-interest"></p>
@@ -108,7 +108,6 @@
         function calculate() {
             const SI = (parseFloat(principalInput.value) * parseFloat(rateInput.value) * parseFloat(timeInput.value)) / 100;
             SIout.innerText = `${SI}`;
-
         }
 
         function reset() {
