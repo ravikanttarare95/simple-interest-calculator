@@ -71,12 +71,13 @@
             background-color: #cc3259;
         }
 
-        #result {
+        #simple-interest {
             margin-top: 20px;
             border: 1px solid #ffb1ff;
             height: 50px;
             border-radius: 5px;
             background-color: #fff;
+            padding: 14px;
         }
     </style>
 </head>
@@ -85,18 +86,38 @@
     <div class="calculator-container">
         <h1>Simple Interest Calculator</h1>
         <div class="input-container">
-            <input type="text" id="principal" placeholder="Principal" required>
-            <input type="text" id="rate" placeholder="Rate" required>
-            <input type="text" id="time" placeholder="Time (years)" required>
+            <input type="number" id="principal" placeholder="Principal (₹)" required>
+            <input type="number" id="rate" placeholder="Rate (%)" required>
+            <input type="number" id="time" placeholder="Time (years)" required>
         </div>
 
         <div class="btn-contaier">
-            <button type="button" class="btn btn-calculate">Calculate</button>
-            <button type="button" class="btn btn-reset">Reset</button>
+            <button type="button" class="btn btn-calculate" onclick="calculate()">Calculate</button>
+            <button type="button" class="btn btn-reset" onclick="reset()">Reset</button>
         </div>
 
-        <p id="result"></p>
+        <p id="simple-interest"></p>
     </div>
+
+    <script>
+        const principalInput = document.getElementById("principal");
+        const rateInput = document.getElementById("rate");
+        const timeInput = document.getElementById("time");
+        const SIout = document.getElementById("simple-interest");
+
+        function calculate() {
+            const SI = (parseFloat(principalInput.value) * parseFloat(rateInput.value) * parseFloat(timeInput.value)) / 100;
+            SIout.innerText = `${SI}`;
+
+        }
+
+        function reset() {
+            principalInput.value = " ";
+            rateInput.value = " ";
+            timeInput.value = " ";
+            SIout.innerText = "";
+        }
+    </script>
 
 </body>
 
