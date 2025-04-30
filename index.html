@@ -96,7 +96,7 @@
             <button type="button" class="btn btn-calculate" onclick="calculate()">Calculate</button>
         </div>
 
-        <p id="simple-interest"></p>
+        <p id="simple-interest">SI</p>
     </div>
 
     <script>
@@ -106,14 +106,19 @@
         const SIout = document.getElementById("simple-interest");
 
         function calculate() {
-            const SI = (parseFloat(principalInput.value) * parseFloat(rateInput.value) * parseFloat(timeInput.value)) / 100;
-            SIout.innerText = `${SI}`;
+            if (!principalInput.value || !rateInput.value || !timeInput.value) {
+                alert("Please input all the values");
+            }
+            else {
+                const SI = (parseFloat(principalInput.value) * parseFloat(rateInput.value) * parseFloat(timeInput.value)) / 100;
+                SIout.innerText = `${SI}`;
+            }
         }
 
         function reset() {
-            principalInput.value = " ";
-            rateInput.value = " ";
-            timeInput.value = " ";
+            principalInput.value = "";
+            rateInput.value = "";
+            timeInput.value = "";
             SIout.innerText = "";
         }
     </script>
