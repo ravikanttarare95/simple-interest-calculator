@@ -7,79 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cantora+One&family=Tagesschrift&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
     <title>Simple Interest</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Cantora One", sans-serif;
-            background-color: rgb(246, 244, 153);
-        }
-
-        h1 {
-            color: #5b015b;
-        }
-
-        .calculator-container {
-            box-shadow: inset 1px 1px 10px 1px #ccc, inset -1px -1px 10px 1px #ccc, 0 3px 2px 0 #666;
-            margin: 100px auto;
-            width: 300px;
-            text-align: center;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #fff
-        }
-
-        .input-container {
-            margin: 20px 0;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        input {
-            height: 30px;
-            border-radius: 5px;
-            border: 1px solid #5b015b;
-            padding: 10px;
-            font-size: 15px;
-        }
-
-        .btn-contaier {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .btn {
-            cursor: pointer;
-            color: #ffffff;
-            border: none;
-            padding: 5px 20px;
-            border-radius: 20px;
-            font-size: 17px;
-        }
-
-        .btn-calculate {
-            background-color: #fc681f;
-        }
-
-        .btn-reset {
-            background-color: #cc3259;
-        }
-
-        #simple-interest {
-            margin-top: 20px;
-            border: 1px solid #5b015b;
-            height: 50px;
-            border-radius: 5px;
-            background-color: #fff;
-            padding: 14px;
-        }
-    </style>
 </head>
 
 <body>
@@ -99,28 +28,8 @@
         <p id="simple-interest"></p>
     </div>
 
-    <script>
-        const principalInput = document.getElementById("principal");
-        const rateInput = document.getElementById("rate");
-        const timeInput = document.getElementById("time");
-        const SIout = document.getElementById("simple-interest");
+    <script src="script.js">
 
-        function calculate() {
-            if (!principalInput.value || !rateInput.value || !timeInput.value) {
-                alert("Please input all the values");
-            }
-            else {
-                const SI = (parseFloat(principalInput.value) * parseFloat(rateInput.value) * parseFloat(timeInput.value)) / 100;
-                SIout.innerText = `₹ ${SI}`;
-            }
-        }
-
-        function reset() {
-            principalInput.value = "";
-            rateInput.value = "";
-            timeInput.value = "";
-            SIout.innerText = "";
-        }
     </script>
 
 </body>
